@@ -1,0 +1,52 @@
+<!-- File: /index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce PWA</title>
+  <!-- Link to the manifest file -->
+  <link rel="manifest" href="/manifest.json">
+  <!-- PWA meta tags -->
+  <meta name="theme-color" content="#317EFB"/>
+  <link rel="icon" sizes="192x192" href="/icons/icon-192x192.png">
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, footer { background: #317EFB; color: white; padding: 1em; text-align: center; }
+    .container { padding: 1em; }
+    .catalog { display: flex; flex-wrap: wrap; gap: 1em; justify-content: center; }
+    .product { border: 1px solid #ccc; margin: 0.5em; padding: 1em; width: calc(33% - 2em); box-sizing: border-box; }
+    .product h3 { margin-top: 0; }
+    @media (max-width: 768px) {
+      .product { width: calc(50% - 2em); }
+    }
+    @media (max-width: 480px) {
+      .product { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My E-commerce Store</h1>
+  </header>
+
+  <div class="container">
+    <h2>Featured Products</h2>
+    <!-- Catalog container to display fetched products -->
+    <div id="catalog" class="catalog">
+      <!-- Existing static or placeholder products can be here -->
+    </div>
+
+    <!-- Button to fetch data from the JSON "database" -->
+    <button id="fetchDataBtn">Load Products</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My E-commerce Store</p>
+  </footer>
+
+  <!-- Include app.js for registering the service worker and fetching data -->
+  <script src="/js/app.js"></script>
+</body>
+</html>
